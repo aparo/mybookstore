@@ -3,12 +3,10 @@
 <body>
 <a href="{% url "shop:index" %}">{% trans "Books Index" %}</a>
 <table>
-    <tr>
-        <td>{% trans "Title" %}</td><td>{{ book.title }}</td>
-        {% if book.description %}<td>{% trans "Description" %}</td><td>{{ book.description }}</td>{% endif %}
-        <td>{% trans "Price" %}</td><td>{{ book.price }}</td>
-        <td>{% trans "Available" %}</td><td>{% if book.available %}{% trans "Yes" %}{% else %}{% trans "No" %}{% endif %}</td>
-    </tr>
+    <tr><td>{% trans "Title" %}</td><td>{{ book.title }}</td></tr>
+    {% if book.description %}<tr><td>{% trans "Description" %}</td><td>{{ book.description }}</td></tr>{% endif %}
+    <tr><td>{% trans "Price" %}</td><td>{{ book.price }}</td></tr>
+    <tr><td>{% trans "Available" %}</td><td>{% if book.available %}{% trans "Yes" %}{% else %}{% trans "No" %}{% endif %}</td></tr>
 </table>
 </body>
 </html>

@@ -31,7 +31,7 @@ class Tag(models.Model):
 
 class Book(models.Model):
     title = models.CharField(max_length=250)
-    description = models.TextField(default=””, blank=True, null=True)
+    description = models.TextField(default="", blank=True, null=True)
     release = models.DateField(auto_now_add=True)
     in_stock = models.IntegerField(default=0)
     available = models.BooleanField(default=True)
