@@ -1,0 +1,16 @@
+<!DOCTYPE html>{% load i18n %}
+<html><head><title>{% trans "Index of books" %}</title></head>
+<body>
+<h1>{% trans "Book List" %}</h1>
+<ul>
+{% for book in books %}
+    <li><a href="{% url "shop:detail" book.pk %}">
+        {{ book.title }} {% trans "by" %} {{ book.author }}</a>
+    </li>
+    {% empty %}
+    <li>{% trans "No books" %}</li>
+    {% endfor %}
+</ul>
+</body>
+</html>
+

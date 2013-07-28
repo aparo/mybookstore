@@ -1,0 +1,15 @@
+<!DOCTYPE html>{% load i18n %}
+<html><head><title>{% trans "Book" %} - {{ book.title }}</title></head>
+<body>
+<a href="{% url "shop:index" %}">{% trans "Books Index" %}</a>
+<table>
+    <tr>
+        <td>{% trans "Title" %}</td><td>{{ book.title }}</td>
+        {% if book.description %}<td>{% trans "Description" %}</td><td>{{ book.description }}</td>{% endif %}
+        <td>{% trans "Price" %}</td><td>{{ book.price }}</td>
+        <td>{% trans "Available" %}</td><td>{% if book.available %}{% trans "Yes" %}{% else %}{% trans "No" %}{% endif %}</td>
+    </tr>
+</table>
+</body>
+</html>
+
